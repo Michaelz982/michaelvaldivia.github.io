@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Michael Anthony Valdivia Loayza</title>
+    <style>
+        /* Estilos generales para el cuerpo de la página */
+        body {
+            font-family: sans-serif; /* Fuente sans-serif para legibilidad */
+            margin: 0; /* Elimina el margen por defecto del cuerpo */
+            padding: 20px; /* Relleno alrededor del contenido principal */
+            background-color: #f0f0f0; /* Color de fondo gris claro */
+            display: flex; /* Utiliza flexbox para centrar el contenedor */
+            justify-content: center; /* Centra horizontalmente el contenido */
+            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+        }
+        /* Contenedor principal del perfil */
+        .container {
+            background-color: #fff; /* Fondo blanco para el contenedor */
+            padding: 20px; /* Relleno dentro del contenedor */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra sutil para darle profundidad */
+            width: 100%; /* Ocupa todo el ancho disponible */
+            max-width: 700px; /* Ancho máximo para que no se extienda demasiado en pantallas grandes */
+            display: flex; /* Usar flexbox para el contenido del contenedor */
+            flex-direction: column; /* Apilar elementos verticalmente */
+        }
+        /* Bloque de encabezado del perfil */
+        .header-block {
+            background-color: #6c757d; /* Color gris (plomo) */
+            padding: 10px; /* Relleno */
+            border-radius: 5px; /* Bordes ligeramente redondeados */
+            text-align: center; /* Texto centrado */
+            margin-bottom: 20px; /* Margen inferior */
+        }
+        /* Estilo para el título dentro del encabezado */
+        .header-block h1 {
+            margin: 0; /* Elimina el margen por defecto */
+            font-size: 1.8em; /* Tamaño de fuente */
+            color: #fff; /* Color de texto blanco */
+        }
+        /* Sección del perfil que contiene la información y la imagen */
+        .profile-section {
+            display: flex; /* Utiliza flexbox para organizar la información y la foto */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            margin-bottom: 20px; /* Margen inferior */
+            padding-bottom: 20px; /* Relleno inferior */
+            border-bottom: 1px solid #eee; /* Línea divisoria en la parte inferior */
+        }
+        /* Contenedor para la información del perfil */
+        .profile-info {
+            flex: 3; /* Ocupa 3 partes del espacio disponible */
+            padding-right: 20px; /* Relleno a la derecha */
+        }
+        /* Contenedor para la imagen de perfil */
+        /* .profile-pic-container se ha eliminado */
+        /* Estilo para la imagen de perfil */
+        /* .profile-pic se ha eliminado */
+        /* Estilos para los títulos H2 */
+        h2 {
+            color: #2c3e50; /* Color azul oscuro */
+            font-size: 1.5em; /* Tamaño de fuente */
+            margin-top: 0; /* Elimina el margen superior */
+            margin-bottom: 10px; /* Margen inferior */
+        }
+        /* Estilos para los títulos H3 */
+        h3 {
+            color: #2c3e50; /* Color azul oscuro */
+            font-size: 1.2em; /* Tamaño de fuente */
+            margin-top: 20px; /* Margen superior */
+            margin-bottom: 10px; /* Margen inferior */
+        }
+        /* Estilos para párrafos y elementos de lista */
+        p, li {
+            font-size: 1em; /* Tamaño de fuente */
+            line-height: 1.6; /* Altura de línea para mejor legibilidad */
+            color: #333; /* Color de texto gris oscuro */
+        }
+        /* Estilos para listas desordenadas */
+        ul {
+            list-style-type: square; /* Tipo de viñeta cuadrada */
+            padding-left: 20px; /* Relleno a la izquierda */
+        }
+        /* Estilos para texto en negrita */
+        strong {
+            color: #555; /* Color gris */
+        }
+        /* Estilos para párrafos dentro de la información de contacto */
+        .contact-info p {
+            margin-bottom: 5px; /* Margen inferior */
+        }
+        /* Estilos para enlaces dentro de la información de contacto */
+        .contact-info a {
+            color: #2c3e50; /* Color azul oscuro */
+            text-decoration: none; /* Sin subrayado */
+        }
+        /* Estilos para enlaces al pasar el ratón por encima */
+        .contact-info a:hover {
+            text-decoration: underline; /* Subrayado al pasar el ratón */
+        }
+        /* Bloque de sección general - Modificado para no tener borde inferior */
+        .section-block {
+            margin-bottom: 20px; /* Margen inferior para separar secciones */
+            padding-bottom: 0px; /* Eliminar padding inferior si no hay borde */
+            border-bottom: none; /* Eliminar el borde inferior */
+        }
+        /* La última sección no necesita margen inferior */
+        .section-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Estilos para los encabezados de ciclo que actúan como toggles */
+        .cycle-toggle {
+            display: block; /* Ocupa todo el ancho */
+            width: 100%;
+            padding: 10px;
+            background-color: #e0e0e0; /* Un gris claro para el botón del ciclo */
+            border: none;
+            text-align: left;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            transition: background-color 0.3s ease;
+            position: relative; /* Para posicionar el icono */
+        }
+        .cycle-toggle:hover {
+            background-color: #d0d0d0;
+        }
+        .cycle-toggle::after {
+            content: '+'; /* Icono por defecto */
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .cycle-toggle.active::after {
+            content: '-'; /* Icono cuando está abierto */
+            transform: translateY(-50%) rotate(0deg); /* No rotar el signo - */
+        }
+
+        /* Oculta las listas de cursos por defecto */
+        .cycle-courses {
+            display: none;
+            margin-top: 10px; /* Espacio después del botón toggle */
+            padding-bottom: 10px;
+            padding-left: 10px; /* Ajusta el padding para la lista */
+            border-left: 2px solid #6c757d; /* Pequeña barra lateral para indicar que pertenece al ciclo */
+        }
+        /* Muestra las listas de cursos cuando están activas */
+        .cycle-courses.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-block">
+            <h1>Perfil de Michael Anthony Valdivia Loayza</h1>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-info">
+                <h2>Datos Generales</h2>
+                <p><strong>Nombre:</strong> Michael Anthony Valdivia Loayza</p>
+                <p><strong>Edad:</strong> 20 años</p>
+                <p><strong>Carrera:</strong> Contabilidad - UCSP (5to Semestre)</p>
+                <h3>Breve Descripción Personal</h3>
+                <p>Soy una persona apasionada por mi carrera, con un gran interés en los números y el funcionamiento de la contabilidad. Me motiva la precisión y el análisis financiero, y busco desarrollar habilidades para aplicarlos estratégicamente.</p>
+
+                <h3>Cursos:</h3>
+                <div class="courses-container">
+                    <button class="cycle-toggle" data-target="cycle1-courses">Ciclo I</button>
+                    <div id="cycle1-courses" class="cycle-courses">
+                        <ul>
+                            <li>Matemática Básica</li>
+                            <li>Fundamentos de Administración</li>
+                            <li>Economía General</li>
+                            <li>Contabilidad I</li>
+                            <li>Introducción a la Vida Universitaria</li>
+                            <li>Comunicación I</li>
+                            <li>Literatura y Teatro</li>
+                        </ul>
+                    </div>
+
+                    <button class="cycle-toggle" data-target="cycle2-courses">Ciclo II</button>
+                    <div id="cycle2-courses" class="cycle-courses">
+                        <ul>
+                            <li>Álgebra y Geometría</li>
+                            <li>Derecho Empresarial</li>
+                            <li>Pensamiento Crítico e Innovación</li>
+                            <li>Contabilidad II</li>
+                            <li>Música y Artes Visuales</li>
+                            <li>Lógica</li>
+                            <li>Comunicación II</li>
+                        </ul>
+                    </div>
+
+                    <button class="cycle-toggle" data-target="cycle3-courses">Ciclo III</button>
+                    <div id="cycle3-courses" class="cycle-courses">
+                        <ul>
+                            <li>Cálculo en Una Variable</li>
+                            <li>Pensamiento Computacional</li>
+                            <li>Legislación Laboral</li>
+                            <li>Contabilidad III</li>
+                            <li>Liderazgo</li>
+                            <li>Filosofía de la Naturaleza</li>
+                            <li>Historia de Occidente I</li>
+                        </ul>
+                    </div>
+
+                    <button class="cycle-toggle" data-target="cycle4-courses">Ciclo IV</button>
+                    <div id="cycle4-courses" class="cycle-courses">
+                        <ul>
+                            <li>Cálculo en Varias Variables</li>
+                            <li>Estadística y Probabilidades</li>
+                            <li>Matemáticas Financieras</li>
+                            <li>Contabilidad de Costos I</li>
+                            <li>Legislación y Auditoría Tributaria</li>
+                            <li>Antropología</li>
+                            <li>Historia de Occidente II</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="section-block">
+            <h2>Intereses</h2>
+            <ul>
+                <li>Terminar la carrera y tener mínimo 3 vocaciones</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2>Docentes:</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Ernesto Cuadros Vargas</a></li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2>Compañeros:</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/franklin-hilari%C3%B3n/" target="_blank">Franklin Hilarión</a></li>
+            </ul>
+        </div>
+
+        <div class="section-block contact-info">
+            <h2>Contacto</h2>
+            <p><strong>Correo electrónico:</strong> <a href="mailto:michael.valdivia@ucsp.edu.pe">michael.valdivia@ucsp.edu.pe</a></p>
+            <p><strong>Teléfono:</strong> ‪+51 982 185 707‬</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/michael-anthony-valdivia-loayza-2492a736a/" target="_blank">Michael Anthony Valdivia Loayza</a></p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para la funcionalidad de mostrar/ocultar cursos
+        document.addEventListener('DOMContentLoaded', () => {
+            const cycleToggles = document.querySelectorAll('.cycle-toggle');
+
+            cycleToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const targetId = toggle.dataset.target; // Obtiene el ID del elemento a mostrar/ocultar
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        // Alterna la clase 'active' para mostrar/ocultar el contenido
+                        targetElement.classList.toggle('active');
+                        // Alterna la clase 'active' en el botón para cambiar el icono
+                        toggle.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
